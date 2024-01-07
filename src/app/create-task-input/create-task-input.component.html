@@ -1,0 +1,29 @@
+<main class="container">
+
+  <h1> ToDo List </h1>
+
+  <form class="form" (ngSubmit)="createTask()">
+    <label>
+      <input
+        maxlength="25"
+        type="text"
+        placeholder="Enter task name"
+        [(ngModel)]="taskName"
+        name="taskName"
+      >
+    </label>
+    <label>
+      <textarea
+        maxlength="69"
+        placeholder="Enter task description"
+        [(ngModel)]="taskDescription"
+        name="taskDescription"
+      ></textarea>
+    </label>
+
+    <div class="buttonWrapper">
+      <button type="submit"> Create </button>
+    </div>
+
+  </form>
+</main>

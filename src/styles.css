@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+  --c-primary: #1e1c28;
+  --c-primary-bright: #333042;
+  --c-secondary: #332e4f;
+  --c-secondary-bright: #484172;
+  --c-accent: #8376c9;
+  --c-accent-bright: #9889e8;
+
+  --br-default: 1rem;
+
+  --br-input-default: 0.25rem;
+
+  --br-btn-default: 0.5rem;
+  --p-btn-default: 0.35rem 0.55rem;
+  --fs-btn-default: 1.25rem;
+
+  --ff-main:Roboto;
+  --fs-default: 16px;
+}
+
+body{
+  background-color: var(--c-primary);
+  font-family: var(--ff-main);
+  color: var(--c-accent);
+  font-size: var(--fs-default);
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin: 0.2rem;
+  padding: 0.2rem;
+}
+
+button{
+  min-width: 5rem;
+  font-size: var(--fs-btn-default);
+  padding: var(--p-btn-default);
+  border-style: none;
+  border-radius: var(--br-btn-default);
+  background-color: var(--c-accent);
+  margin: 0;
+  &:hover{
+    cursor: pointer;
+    background-color: var(--c-accent-bright);
+  }
+}
+
+textarea{
+  resize: none;
+  min-height: 3rem
+}
+
+input{
+  border-style: none;
+  outline-color: var(--c-accent);
+  outline-width: 0.05rem;
+}
+
+textarea{
+  border-style: none;
+  outline-color: var(--c-accent);
+  outline-width: 0.05rem;
+}
+
+.colCenter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rowCenter{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

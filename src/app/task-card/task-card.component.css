@@ -1,0 +1,31 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  word-wrap: break-word;
+  gap: 1rem;
+  padding: 0.5rem;
+  background-color: var(--c-primary-bright);
+  border-radius: var(--br-default);
+
+  width: 12rem;
+  height: 14rem;
+}
+
+taskName{
+
+}
+
+taskDescription{
+
+}
+
+.buttonWrapper{
+  width: 100%;
+  margin: auto 0.25rem 0.25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
