@@ -2,6 +2,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
 import { FormsModule } from "@angular/forms";
 
 export type Task = {
+  taskId:number,
   taskName: string,
   taskDescription: string,
 }
@@ -20,17 +21,22 @@ export class CreateTaskInputComponent {
   taskName: string = '';
   taskDescription: string = '';
 
-  @Output() taskCreated: EventEmitter<Task> = new EventEmitter<Task>();
+  @Output() onTaskCreateBtnClicked: EventEmitter<Task> = new EventEmitter<Task>();
 
   createTask() {
     if(this.taskName === '' && this.taskDescription === '') return;
-
-    console.log("Task Created");
     
     const newTask:Task = {
+      taskId: Math.random(),
       taskName: this.taskName,
       taskDescription: this.taskDescription,
     }
-    this.taskCreated.emit(newTask);
+    this.onTaskCreateBtnClicked.emit(newTask);
+    this.clearInputValues();
+  }
+
+  clearInputValues(){
+    this.taskName = '';
+    this.taskDescription = '';
   }
 }

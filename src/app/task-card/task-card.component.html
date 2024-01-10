@@ -1,12 +1,33 @@
 <main class="container">
-  <h3 class="taskName"> Feed the Cat </h3>
-  <p class="taskDescription"> Feed the cat so that the cat does not die! Don't forget to do this!!! </p>
-  <div class="buttonWrapper">
-    <button
-      (click)="onEditBtnClick()"
-    > Edit </button>
-    <button
-      (click)="onDeleteBtnClick()"
-    > Delete </button>
+
+  <div class="content container" [hidden]="isInEditMode">
+    <h3 class="taskName"> {{taskName}} </h3>
+    <p class="taskDescription"> {{taskDescription}} </p>
+    <div class="buttonWrapper">
+      <button
+        (click)="editBtnClick()"
+      > Edit </button>
+      <button
+        (click)="deleteBtnClick()"
+      > Delete </button>
+    </div>
   </div>
+
+  <div [hidden]="isInEditMode" class="edit container" >
+    <input
+      type="text"
+      class="taskName"
+      [(ngModel)]="taskName"
+    >
+    <p class="taskDescription"> {{taskDescription}} </p>
+    <div class="buttonWrapper">
+      <button
+        (click)="editBtnClick()"
+      > Edit </button>
+      <button
+        (click)="deleteBtnClick()"
+      > Delete </button>
+    </div>
+  </div>
+
 </main>

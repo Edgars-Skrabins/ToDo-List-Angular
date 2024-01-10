@@ -1,21 +1,30 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import axios from "axios";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-task-card',
   standalone: true,
-  imports: [],
+  imports: [
+    FormsModule
+  ],
   templateUrl: './task-card.component.html',
   styleUrl: './task-card.component.css'
 })
 export class TaskCardComponent {
-  taskId:number = 0;
-  taskName = '';
-  taskDescription = '';
+  isInEditMode = false;
+  @Input() taskId:number = 0;
+  @Input() taskName:string = '';
+  @Input() taskDescription:string = '';
 
-  onDeleteBtnClick() {
+  @Output() onDeleteBtnClicked: EventEmitter<number> = new EventEmitter<number>();
+  @Output() onEditBtnClicked: EventEmitter<number> = new EventEmitter<number>();
 
+
+  deleteBtnClick() {
+    this.onDeleteBtnClicked.emit(this.taskId);
   }
-  onEditBtnClick() {
-
+  editBtnClick() {
+    this.onEditBtnClicked.emit(this.taskId);
   }
 }

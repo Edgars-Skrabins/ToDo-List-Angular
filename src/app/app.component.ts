@@ -17,7 +17,6 @@ import {TaskListComponent} from "./task-list/task-list.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  @ViewChild(CreateTaskInputComponent) private _createTaskInputComponent!: CreateTaskInputComponent;
 
   handleTaskCreated($event: Task) {
     console.log($event);

@@ -15,11 +15,11 @@
 }
 
 taskName{
-
+  word-break: break-word;
 }
 
 taskDescription{
-
+  word-break: break-word;
 }
 
 .buttonWrapper{
