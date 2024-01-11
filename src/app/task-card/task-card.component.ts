@@ -48,6 +48,7 @@ export class TaskCardComponent {
       taskName: this.taskName,
       taskDescription: this.taskDescription,
     };
+
     this.onEditConfirmBtnClicked.emit(thisTask);
   }
 }

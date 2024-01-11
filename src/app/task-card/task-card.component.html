@@ -1,6 +1,6 @@
 <main class="container">
 
-  <div class="content container" *ngIf="!isInEditMode">
+  <div *ngIf="!isInEditMode" class="content container">
     <h3 class="taskName"> {{ taskName }} </h3>
     <p class="taskDescription"> {{ taskDescription }} </p>
     <div class="buttonWrapper">
@@ -15,15 +15,16 @@
     </div>
   </div>
 
-  <div class="edit container" *ngIf="isInEditMode">
+  <div *ngIf="isInEditMode" class="edit container">
     <input
-      type="text"
-      class="taskName"
       [(ngModel)]="taskName"
+      class="taskName"
+      type="text"
     >
     <input
+      [(ngModel)]="taskDescription"
       class="taskDescription"
-      [ngModel]="taskDescription"
+      type="text"
     >
     <div class="buttonWrapper">
       <button

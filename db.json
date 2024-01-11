@@ -12,13 +12,18 @@
     },
     {
       "id": 3,
-      "taskName": "Fight Janis",
+      "taskName": "Fight Janis!",
       "taskDescription": "Challenge Janis to a 1v1"
     },
     {
       "id": 4,
       "taskName": "Learn JavaScript!!",
       "taskDescription": "Kas ir masivs? Gotta find that out"
+    },
+    {
+      "id": 0.8552541763615169,
+      "taskName": "asdaa",
+      "taskDescription": "asdasd"
     }
   ]
 }
