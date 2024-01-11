@@ -1,32 +1,39 @@
 <main class="container">
 
-  <div class="content container" [hidden]="isInEditMode">
-    <h3 class="taskName"> {{taskName}} </h3>
-    <p class="taskDescription"> {{taskDescription}} </p>
+  <div class="content container" *ngIf="!isInEditMode">
+    <h3 class="taskName"> {{ taskName }} </h3>
+    <p class="taskDescription"> {{ taskDescription }} </p>
     <div class="buttonWrapper">
       <button
         (click)="editBtnClick()"
-      > Edit </button>
+      > Edit
+      </button>
       <button
         (click)="deleteBtnClick()"
-      > Delete </button>
+      > Delete
+      </button>
     </div>
   </div>
 
-  <div [hidden]="isInEditMode" class="edit container" >
+  <div class="edit container" *ngIf="isInEditMode">
     <input
       type="text"
       class="taskName"
       [(ngModel)]="taskName"
     >
-    <p class="taskDescription"> {{taskDescription}} </p>
+    <input
+      class="taskDescription"
+      [ngModel]="taskDescription"
+    >
     <div class="buttonWrapper">
       <button
-        (click)="editBtnClick()"
-      > Edit </button>
+        (click)="cancelEdit()"
+      > Cancel
+      </button>
       <button
-        (click)="deleteBtnClick()"
-      > Delete </button>
+        (click)="confirmEdit()"
+      > Confirm
+      </button>
     </div>
   </div>
 

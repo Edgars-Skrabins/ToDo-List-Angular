@@ -1,17 +1,17 @@
 <main class="colCenter">
   <app-create-task-input
+    (onTaskCreateBtnClicked)="handleTaskCreateBtnClick($event)"
     class="colCenter"
-    (onTaskCreateBtnClicked)="handleTaskCreated($event)"
   />
   <div class="tasksContainer">
     <app-task-card
-      *ngFor="let card of taskCards"
-      [taskId]="card.taskId"
-      [taskName]="card.taskName"
-      [taskDescription]="card.taskDescription"
-      class="colCenter"
       (onDeleteBtnClicked)="deleteTask($event)"
-      (onEditBtnClicked)="editTask($event)"
+      (onEditConfirmBtnClicked)="editTask($event)"
+      *ngFor="let card of taskCards"
+      [taskDescription]="card.taskDescription"
+      [taskId]="card.id"
+      [taskName]="card.taskName"
+      class="colCenter"
     />
   </div>
 
